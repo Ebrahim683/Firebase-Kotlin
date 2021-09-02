@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="15dp"
+    android:padding="5dp"
+    >
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/sampleProfileImage"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/kotlin"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp"
+        />
+
+    <TextView
+        android:id="@+id/sampleEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:layout_toEndOf="@id/sampleProfileImage" />
+
+    <TextView
+        android:id="@+id/sampleName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:layout_below="@id/sampleEmail"
+        android:layout_marginTop="15dp"
+        android:layout_toEndOf="@id/sampleProfileImage" />
+
+    <TextView
+        android:id="@+id/sampleNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/sampleName"
+        android:layout_toEndOf="@id/sampleProfileImage" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="350dp"
+        android:layout_height="2dp"
+        android:background="#BDB8B8"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/sampleProfileImage"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
