@@ -20,11 +20,12 @@ class HomePage : AppCompatActivity() {
 
     lateinit var mAuth: FirebaseAuth
     lateinit var firebaseDatabase: FirebaseDatabase
-    private lateinit var databaseReference: DatabaseReference
+    lateinit var databaseReference: DatabaseReference
     lateinit var name: String
     lateinit var number: String
     lateinit var id: String
-    lateinit var emailAddress: String
+    lateinit var emailText:String
+    lateinit var emailadd:String
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,17 +36,19 @@ class HomePage : AppCompatActivity() {
         mAuth = FirebaseAuth.getInstance()
         firebaseDatabase = FirebaseDatabase.getInstance()
 
-        emailTextID.text = mAuth.currentUser!!.email.toString()
+        emailText = intent.getStringExtra("email").toString()
 
         saveButton.setOnClickListener {
             addData()
         }
 
+        emailadd = mAuth.currentUser!!.email.toString()
+        emailTextID.text = emailadd
 
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        var menuInflater: MenuInflater = menuInflater
+        val menuInflater: MenuInflater = menuInflater
         var menuItem = menuInflater.inflate(R.menu.menu_homepage, menu)
         return super.onCreateOptionsMenu(menu)
     }
@@ -83,7 +86,7 @@ class HomePage : AppCompatActivity() {
             Toast.makeText(this, "Fill Your Form First", Toast.LENGTH_SHORT).show()
             progressDialog.dismiss()
         } else {
-            val userModel = UserModel(id, name, number, emailAddress)
+            val userModel = UserModel(id, name, number, emailadd)
             databaseReference =
                 firebaseDatabase.reference.child("User Data").child(id)
             databaseReference.apply {
