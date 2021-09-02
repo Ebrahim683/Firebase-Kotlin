@@ -3,11 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/FirebaseKotlin/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.20260416666666667" />
         <entry key="..\:/FirebaseKotlin/app/src/main/res/drawable/bg_button_account.xml" value="0.21574074074074073" />
+        <entry key="..\:/FirebaseKotlin/app/src/main/res/drawable/ic_launcher_background.xml" value="0.20260416666666667" />
         <entry key="..\:/FirebaseKotlin/app/src/main/res/layout/activity_home_page.xml" value="0.20416666666666666" />
+        <entry key="..\:/FirebaseKotlin/app/src/main/res/layout/activity_list.xml" value="0.20416666666666666" />
         <entry key="..\:/FirebaseKotlin/app/src/main/res/layout/activity_login.xml" value="0.20416666666666666" />
         <entry key="..\:/FirebaseKotlin/app/src/main/res/layout/activity_main.xml" value="0.21" />
+        <entry key="..\:/FirebaseKotlin/app/src/main/res/layout/rec_single_row.xml" value="0.2" />
         <entry key="..\:/FirebaseKotlin/app/src/main/res/menu/menu_homepage.xml" value="0.20416666666666666" />
+        <entry key="..\:/FirebaseKotlin/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.20260416666666667" />
+        <entry key="..\:/FirebaseKotlin/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.20260416666666667" />
       </map>
     </option>
   </component>

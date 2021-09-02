@@ -20,9 +20,11 @@ class HomePage : AppCompatActivity() {
 
     lateinit var mAuth: FirebaseAuth
     lateinit var firebaseDatabase: FirebaseDatabase
-    lateinit var databaseReference: DatabaseReference
+    private lateinit var databaseReference: DatabaseReference
     lateinit var name: String
     lateinit var number: String
+    lateinit var id: String
+    lateinit var emailAddress: String
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,9 +35,12 @@ class HomePage : AppCompatActivity() {
         mAuth = FirebaseAuth.getInstance()
         firebaseDatabase = FirebaseDatabase.getInstance()
 
+        emailTextID.text = mAuth.currentUser!!.email.toString()
+
         saveButton.setOnClickListener {
             addData()
         }
+
 
     }
 
@@ -52,6 +57,7 @@ class HomePage : AppCompatActivity() {
                 startActivity(Intent(this, LoginActivity::class.java))
                 finish()
             }
+            R.id.listIdMenu -> startActivity(Intent(this, ListActivity::class.java))
         }
         return super.onOptionsItemSelected(item)
     }
@@ -61,8 +67,10 @@ class HomePage : AppCompatActivity() {
         var animation = AnimationUtils.loadAnimation(this, R.anim.button_animation)
         saveButton.startAnimation(animation)
 
+        id = mAuth.currentUser!!.uid
         name = nameID.text.toString()
         number = numberId.text.toString()
+
 
         var progressDialog: ProgressDialog = ProgressDialog(this)
             .apply {
@@ -75,18 +83,16 @@ class HomePage : AppCompatActivity() {
             Toast.makeText(this, "Fill Your Form First", Toast.LENGTH_SHORT).show()
             progressDialog.dismiss()
         } else {
-
-            val userModel = UserModel(name, number)
+            val userModel = UserModel(id, name, number, emailAddress)
             databaseReference =
-                firebaseDatabase.getReference("User Data").child(mAuth.currentUser!!.uid)
+                firebaseDatabase.reference.child("User Data").child(id)
             databaseReference.apply {
                 setValue(userModel)
                 progressDialog.dismiss()
             }
             Snackbar.make(this, homePageID, "Data Added", Snackbar.LENGTH_SHORT).show()
-            nameID.text = null
-            numberId.text = null
-
+            nameID.setText("")
+            numberId.setText("")
         }
     }
 

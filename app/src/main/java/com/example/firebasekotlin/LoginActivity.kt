@@ -45,10 +45,10 @@ class LoginActivity : AppCompatActivity() {
         email = emailLogin.text.toString().trim()
         password = passwordLogin.text.toString().trim()
 
-        var animation = AnimationUtils.loadAnimation(this, R.anim.button_animation)
+        val animation = AnimationUtils.loadAnimation(this, R.anim.button_animation)
         signInButton.startAnimation(animation)
 
-        var progressDialog: ProgressDialog = ProgressDialog(this)
+        val progressDialog: ProgressDialog = ProgressDialog(this)
             .apply {
                 setTitle("Login In...")
                 setCancelable(false)
