@@ -30,20 +30,29 @@
         android:layout_marginTop="130dp"
         android:textAlignment="center"
         android:textSize="20sp"
-        android:text="sdhdbfdsk"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/saveImage"
+        android:layout_width="253dp"
+        android:layout_height="50dp"
+        android:text="Save Profile Picture"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textID" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recId"
+        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textID" />
+        app:layout_constraintTop_toBottomOf="@+id/saveImage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
